@@ -46,11 +46,19 @@ Imports
 =======
 */
 
-var spectralIndices = require("users/dmlmont/spectral:spectral-indices");
-var scaling = require("users/dmlmont/spectral:spectral-scale-parameters");
-var offsetting = require("users/dmlmont/spectral:spectral-offset-parameters");
-var bands = require("users/dmlmont/spectral:spectral-bands");
-var constants = require("users/dmlmont/spectral:spectral-constants");
+if (typeof process !== 'undefined' && !!process.versions && !!process.versions.node) {
+  var spectralIndices = require("./spectral-indices");
+  var scaling = require("./spectral-scale-parameters");
+  var offsetting = require("./spectral-offset-parameters");
+  var bands = require("./spectral-bands");
+  var constants = require("./spectral-constants");
+} else {
+  var spectralIndices = require("users/dmlmont/spectral:spectral-indices");
+  var scaling = require("users/dmlmont/spectral:spectral-scale-parameters");
+  var offsetting = require("users/dmlmont/spectral:spectral-offset-parameters");
+  var bands = require("users/dmlmont/spectral:spectral-bands");
+  var constants = require("users/dmlmont/spectral:spectral-constants");
+}
 
 /*
 ==========

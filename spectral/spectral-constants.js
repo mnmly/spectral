@@ -37,6 +37,8 @@ Attributes
 ==========
 */
 
+if (typeof process !== 'undefined' && !!process.versions && !!process.versions.node) { var None = null }
+
 var constants = {
     'C1': {
         'default': 6.0,
